@@ -10,6 +10,12 @@ function App (props) {
   const [idealFacingMode, setIdealFacingMode] = useState(null);
   const [isMaxResolution, setIsMaxResolution] = useState(false);
 
+
+  function handleTakePhoto (dataUri) {
+    // Do stuff with the photo...
+    console.log('takePhoto !!!');
+  }
+
   function renderButtons () {
     return (
       <div>
@@ -32,7 +38,7 @@ function App (props) {
       <Camera
         idealFacingMode = {idealFacingMode}
         isMaxResolution = {isMaxResolution}
-        onTakePhoto = { () => {} }
+        onTakePhoto = { () => { handleTakePhoto(dataUri); } }
       />
     </div>
   );
